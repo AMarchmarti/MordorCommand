@@ -1,4 +1,4 @@
-package org.mvpigs;
+package org.mvpigs.commandpattern;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -17,6 +17,9 @@ import org.mvpigs.commandpattern.procesadores.Oficina;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoInternacional;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoMultiple;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoPeligroso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * NO PUEDES MODIFICAR EL CODIGO DE LOS CASOS TEST
@@ -176,38 +179,42 @@ public class TestPedidos {
                 correos.procesa(tratamientoKO),
                 pedidoConPeligro));
 
-    }}
+    }
 
-//    /**
-//     * Crea una clase TratamientoPedidoMultiple que permita tratar
-//     * pedidos multiples.
-//     *
-//     * La clase permite tratar el pedido multiple si
-//     * el peso total de los pedidos es mayor que 0
-//     * y
-//     * el numero de bultos coincide con el numero de
-//     * pedidos individuales que forman el pedido multiple.
-//     *
-//     * Crea las clases necesarias que se requieren en los casos test
-//     * respetando los constructores que se exigen.
-//     */
-//
-//    @Test
-//    public void test_tratamiento_pedido_multiple_tratar() {
-//
-//        /**
-//         * Crea una colección de tres pedidos nacionales,
-//         * a "Gondor", "Minas Tirith", "Rohan"
-//         * con un peso de 10 cada uno.
-//         *
-//         * Pasasela a TratamientoPedidosMultiple en su constructor.
-//         */
-//
-//        // Coleccion pedidos
-//        assertTrue(pedidos.size() == 3);
-//
-//        TratamientoPedidoMultiple pedidosMult = new TratamientoPedidoMultiple(pedidos);
-//        assertNotNull(pedidosMult);
+    /**
+     * Crea una clase TratamientoPedidoMultiple que permita tratar
+     * pedidos multiples.
+     *
+     * La clase permite tratar el pedido multiple si
+     * el peso total de los pedidos es mayor que 0
+     * y
+     * el numero de bultos coincide con el numero de
+     * pedidos individuales que forman el pedido multiple.
+     *
+     * Crea las clases necesarias que se requieren en los casos test
+     * respetando los constructores que se exigen.
+     */
+
+    @Test
+    public void test_tratamiento_pedido_multiple_tratar() {
+
+        /**
+         * Crea una colección de tres pedidos nacionales,
+         * a "Gondor", "Minas Tirith", "Rohan"
+         * con un peso de 10 cada uno.
+         *
+         * Pasasela a TratamientoPedidosMultiple en su constructor.
+         */
+
+        List<Pedido> pedidos = new ArrayList<>();
+        pedidos.add(new PedidoNacional("Gondor", 10));
+        pedidos.add(new PedidoNacional("Minas Tirith", 10));
+        pedidos.add(new PedidoNacional("Rohan",10));
+
+        assertTrue(pedidos.size() == 3);
+
+        TratamientoPedidoMultiple pedidosMult = new TratamientoPedidoMultiple(pedidos);
+        assertNotNull(pedidosMult);
 //
 //        /**
 //         * Completa los metodos del pedido multiple.
@@ -233,5 +240,5 @@ public class TestPedidos {
 //         * Trata el pedido multiple.
 //         */
 //        assertTrue(pedidosMult.tratar());
-//    }
-//}
+    }
+}
