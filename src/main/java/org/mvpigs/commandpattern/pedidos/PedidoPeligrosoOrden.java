@@ -3,6 +3,8 @@ package org.mvpigs.commandpattern.pedidos;
 import org.mvpigs.commandpattern.interfaces.Pedido;
 import org.mvpigs.commandpattern.interfaces.PedidoPeligroso;
 
+import java.util.UUID;
+
 public class PedidoPeligrosoOrden implements Pedido, PedidoPeligroso {
 
     private String destino = null;
@@ -17,6 +19,10 @@ public class PedidoPeligrosoOrden implements Pedido, PedidoPeligroso {
     }
 
 
+    @Override
+    public String getId() {
+        return UUID.randomUUID().toString();
+    }
 
     @Override
     public String instrucciones() {
