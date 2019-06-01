@@ -19,7 +19,9 @@ import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoMultiple;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoPeligroso;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * NO PUEDES MODIFICAR EL CODIGO DE LOS CASOS TEST
@@ -206,7 +208,7 @@ public class TestPedidos {
          * Pasasela a TratamientoPedidosMultiple en su constructor.
          */
 
-        List<Pedido> pedidos = new ArrayList<>();
+        Set<Pedido> pedidos = new HashSet<>();
         pedidos.add(new PedidoNacional("Gondor", 10));
         pedidos.add(new PedidoNacional("Minas Tirith", 10));
         pedidos.add(new PedidoNacional("Rohan",10));
@@ -215,30 +217,30 @@ public class TestPedidos {
 
         TratamientoPedidoMultiple pedidosMult = new TratamientoPedidoMultiple(pedidos);
         assertNotNull(pedidosMult);
-//
-//        /**
-//         * Completa los metodos del pedido multiple.
-//         * Se valorara el uso de streams.
-//         *
-//         * calcularTotalBultos
-//         * @param   void
-//         * @return  void
-//         *
-//         * calcularPesoTotal
-//         * @param   void
-//         * @return  void
-//         *
-//         */
-//
-//        pedidosMult.calcularTotalBultos();
-//        assertEquals(3, pedidosMult.getNumBultos(), 0);
-//
-//        pedidosMult.calcularPesoTotal();
-//        assertEquals(30, pedidosMult.getPesoTotal(), 0);
-//
-//        /**
-//         * Trata el pedido multiple.
-//         */
-//        assertTrue(pedidosMult.tratar());
+
+        /**
+         * Completa los metodos del pedido multiple.
+         * Se valorara el uso de streams.
+         *
+         * calcularTotalBultos
+         * @param   void
+         * @return  void
+         *
+         * calcularPesoTotal
+         * @param   void
+         * @return  void
+         *
+         */
+
+        pedidosMult.calcularTotalBultos();
+        assertEquals(3, pedidosMult.getNumBultos(), 0);
+
+        pedidosMult.calcularPesoTotal();
+        assertEquals(30, pedidosMult.getPesoTotal(), 0);
+
+        /**
+         * Trata el pedido multiple.
+         */
+        assertTrue(pedidosMult.tratar());
     }
 }
