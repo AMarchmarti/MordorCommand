@@ -43,19 +43,19 @@ public class TestPedidos {
                 (PedidoInternacional) pedidoInt);
         assertNotNull(tratamientoKO);
         assertFalse(tratamientoKO.tratar());
-    }}
+    }
 
-//    @Test
-//    public void test_Comarca() {
-//
-//        Pedido pedidoInt = new PedidoInternacional("Comarca", 100);
-//        assertEquals("Comarca", pedidoInt.destino());
-//
-//        TratamientoPedido tratamientoOK = new TratamientoPedidoInternacional(
-//                (PedidoInternacional) pedidoInt);
-//        assertNotNull(tratamientoOK);
-//        assertTrue(tratamientoOK.tratar());
-//    }
+    @Test
+    public void test_Comarca() {
+
+        Pedido pedidoInt = new PedidoInternacional("Comarca", 100);
+        assertEquals("Comarca", pedidoInt.destino());
+
+        TratamientoPedido tratamientoOK = new TratamientoPedidoInternacional(
+                (PedidoInternacional) pedidoInt);
+        assertNotNull(tratamientoOK);
+        assertTrue(tratamientoOK.tratar());
+    }}
 //
 //    /**
 //     * Crea una clase TratamientoPedidoPeligroso que permita tratar
