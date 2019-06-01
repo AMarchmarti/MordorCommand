@@ -109,22 +109,22 @@ public class TestPedidos {
         assertNotNull(peligroso.getId());
 
         assertTrue(internacional.getId() != peligroso.getId());
+    }
+
+    /**
+     * Añade una clase para los pedidos nacionales.
+     */
+
+    @Test
+    public void test_pedido_nacional_UUDI() {
+
+        PedidoInternacional internacional = new PedidoInternacional("Mordor", 10);
+        assertNotNull(internacional);
+        PedidoNacional nacional = new PedidoNacional("Gondor", 50);
+        assertNotNull(nacional);
+        assertTrue(internacional.getId() != nacional.getId());
     }}
 
-//    /**
-//     * Añade una clase para los pedidos nacionales.
-//     */
-//
-//    @Test
-//    public void test_pedido_nacional_UUDI() {
-//
-//        PedidoInternacional internacional = new PedidoInternacional("Mordor", 10);
-//        assertNotNull(internacional);
-//        PedidoNacional nacional = new PedidoNacional("Gondor", 50);
-//        assertNotNull(nacional);
-//        assertTrue(internacional.getId() != nacional.getId());
-//    }
-//
 //    /**
 //     * Construye una oficina que procese todo tipo de pedidos.
 //     *
