@@ -94,7 +94,7 @@ public class TestPedidos {
     }
 
     /**
-     * Añade a las clases PedidoInternacional y PedidoPeligrosoOrden
+     * Añade a las clases Pedido y PedidoPeligrosoOrden
      * una identificador Id de tipo String
      * autogenerado haciendo uso de la clase UUID de Java
      * https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html
