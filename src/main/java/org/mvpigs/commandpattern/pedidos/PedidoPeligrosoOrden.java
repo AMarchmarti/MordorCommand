@@ -1,4 +1,35 @@
 package org.mvpigs.commandpattern.pedidos;
 
-public class PedidoPeligrosoOrden {
+import org.mvpigs.commandpattern.interfaces.Pedido;
+import org.mvpigs.commandpattern.interfaces.PedidoPeligroso;
+
+public class PedidoPeligrosoOrden implements Pedido, PedidoPeligroso {
+
+    private String destino = null;
+
+    private Integer peso = null;
+
+    private String instrucciones = null;
+
+    public PedidoPeligrosoOrden(String lugar, String instrucciones){
+        this.destino = lugar;
+        this.instrucciones = instrucciones;
+    }
+
+
+
+    @Override
+    public String instrucciones() {
+        return instrucciones;
+    }
+
+    @Override
+    public int peso() {
+        return 0;
+    }
+
+    @Override
+    public String destino() {
+        return destino;
+    }
 }
