@@ -32,7 +32,7 @@ public class TratamientoPedidoMultiple implements TratamientoPedido {
     }
 
     public void calcularTotalBultos(){
-        this.numBultos = this.listaPedidos.size();
+        this.numBultos = (int) listaPedidos.stream().count();
     }
 
     public Integer getNumBultos(){return this.numBultos;}
